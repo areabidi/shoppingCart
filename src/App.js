@@ -3,6 +3,9 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NavbarComponent from './components/Navbar';
 import { Container } from 'react-bootstrap';
+import { CartContext } from './CartContext';
+
+import CartProvider from './CartContext';
 //react-router helps show different pages:
 //localhost:3000 ->home
 //localhost:3000/succcess -> Success
@@ -14,6 +17,7 @@ import Store  from './pages/Store';
 
 function App() {
   return (
+    <CartProvider>
     <Container>
     <NavbarComponent> </NavbarComponent>
     <BrowserRouter>
@@ -24,6 +28,7 @@ function App() {
     </Routes>
     </BrowserRouter>
      </Container>
+     </CartProvider>
   );
 }
 
